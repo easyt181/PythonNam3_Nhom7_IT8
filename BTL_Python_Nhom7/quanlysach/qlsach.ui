@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>qlsach</class>
+ <widget class="QMainWindow" name="qlsach">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1131</width>
+    <height>789</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../new_resource.qrc">
+    <normaloff>:/newPrefix/icons/1.png</normaloff>:/newPrefix/icons/1.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QComboBox{
+ 			padding: 6px; 
+            border: 2px solid #0066CC; 
+            border-radius: 5px;  
+            font-size: 16px;
+            background-color: #0066CC; 
+            color: white; 
+        }
+QComboBox:focus {
+            border: 2px solid #003366;  
+        }
+QLineEdit#txtTimKiemSach {
+    padding: 6px;  /* Khoảng cách giữa văn bản và biên của QLineEdit */
+    border: 2px solid #3366CC;  /* Bo viền màu xanh lá cây */
+    border-radius: 10px;  /* Bo góc cho QLineEdit */
+    font-size: 16px;  /* Kích thước phông chữ */
+}
+
+QLineEdit#txtTimKiemSach:focus {
+    border: 2px solid #45a049;  /* Màu viền khi QLineEdit được chọn */
+}
+QPushButton#btnThemSach {
+    background-color: #33CC99;
+    border: 2px solid #33CC99;  
+    color: white;  
+    padding: 10px 24px; 
+    text-align: center;  
+    text-decoration: none; 
+    font-size: 16px;
+    margin: 4px 2px; 
+    border-radius: 8px;
+}
+
+QPushButton#btnLamMoi {
+    background-color: #33CC99;
+    border: 2px solid #33CC99;  
+    color: white;  
+    padding: 10px 24px; 
+    text-align: center;  
+    text-decoration: none; 
+    font-size: 16px;
+    margin: 4px 2px; 
+    border-radius: 8px;
+}
+
+QPushButton#btnThemSach:hover {
+    background-color: #33CC66; 
+	border: 2px solid #33CC66; 
+}
+QPushButton#btnLamMoi:hover {
+    background-color: #33CC66; 
+	border: 2px solid #33CC66; 
+}
+
+QHeaderView::section {
+                background-color: #003366; 
+                border: 1px solid #d3d3d3; 
+                padding: 4px; 
+                font-weight: bold;  
+                color: white;           
+ }
+QTableWidget{
+alternate-background-color: #B0EDFB;
+background-color: #F4F9FA;
+border: 2px solid #003366;
+}
+QTableWidget::item {
+ border: 1px solid #003366;
+}
+QTableWidget::item:selected {
+                background-color: yellow;
+                color: black;
+ }
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1131</width>
+      <height>49</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>Bahnschrift</family>
+         <pointsize>24</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>QUẢN LÝ SÁCH</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="btnThemSach">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>190</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+     </font>
+    </property>
+    <property name="text">
+     <string>Thêm sách mới</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../new_resource.qrc">
+      <normaloff>:/newPrefix/icons/addBook.png</normaloff>:/newPrefix/icons/addBook.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnLamMoi">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>60</y>
+      <width>190</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>170</width>
+      <height>51</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>190</width>
+      <height>37</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+     </font>
+    </property>
+    <property name="text">
+     <string>Làm mới</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../new_resource.qrc">
+      <normaloff>:/newPrefix/icons/updateLS.png</normaloff>:/newPrefix/icons/updateLS.png</iconset>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>1071</width>
+      <height>53</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QComboBox" name="cbbTimKiemTheLoaiSach">
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="editable">
+        <bool>false</bool>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
+       <item>
+        <property name="text">
+         <string>Thể loại sách</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sách thiếu nhi</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sách tâm lý, tình cảm</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sách tôn giáo</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sách văn hoá xã hội</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sách lịch sử</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sách văn học viễn tưởng</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sách tiểu sử, tự truyện</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sách kinh dị, bí ẩn</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sách khoa học công nghệ</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sách truyền cảm hứng</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cbbTimKiemNXB">
+       <property name="minimumSize">
+        <size>
+         <width>214</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>214</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="currentText">
+        <string>Nhà xuất bản</string>
+       </property>
+       <property name="duplicatesEnabled">
+        <bool>false</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>Nhà xuất bản</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nhà xuất bản giáo dục Việt Nam</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nhà xuất bản Trẻ</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nhà xuất bản Kim Đồng</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nhà xuất bản chính trị quốc gia sự thật</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nhà xuất bản Tư pháp</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nhà xuất bản Hội Nhà văn</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nhà xuất bản lao động</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="txtTimKiemSach">
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="placeholderText">
+        <string>Nhập từ khóa tìm kiếm...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnTimKiemSach">
+       <property name="minimumSize">
+        <size>
+         <width>50</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Bahnschrift</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../new_resource.qrc">
+         <normaloff>:/newPrefix/icons/searchLS.png</normaloff>:/newPrefix/icons/searchLS.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QTableWidget" name="tableSach">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>200</y>
+      <width>1111</width>
+      <height>531</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1131</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="../new_resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

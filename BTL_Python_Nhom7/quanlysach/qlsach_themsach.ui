@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>qlsach_themsach</class>
+ <widget class="QDialog" name="qlsach_themsach">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>401</width>
+    <height>431</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../new_resource.qrc">
+    <normaloff>:/newPrefix/icons/addBook.png</normaloff>:/newPrefix/icons/addBook.png</iconset>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>381</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_7">
+    <property name="spacing">
+     <number>10</number>
+    </property>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>Bahnschrift</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Tên sách:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txtTenSach">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="inputMask">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_7">
+        <property name="font">
+         <font>
+          <family>Bahnschrift</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Thể loại sách:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cbbTheLoaiSach">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+        <property name="currentText">
+         <string>Chọn thể loại sách</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+        <item>
+         <property name="text">
+          <string>Chọn thể loại sách</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>-------------------</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sách thiếu nhi</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sách tâm lý, tình cảm</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sách tôn giáo</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sách văn hoá xã hội</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sách lịch sử</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sách văn học viễn tưởng</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sách tiểu sử, tự truyện</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sách kinh dị, bí ẩn</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sách khoa học công nghệ</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sách truyền cảm hứng</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <family>Bahnschrift</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Nhà xuât bản:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cbbNhaXuatBan">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bahnschrift</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+        <property name="currentText">
+         <string>Chọn nhà xuất bản</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+        <item>
+         <property name="text">
+          <string>Chọn nhà xuất bản</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>-------------------</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Nhà xuất bản giáo dục Việt Nam</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Nhà xuất bản Trẻ</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Nhà xuất bản Kim Đồng</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Nhà xuất bản chính trị quốc gia sự thật</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Nhà xuất bản Tổng hợp thành phố Hồ Chí Minh</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Nhà xuất bản Tư pháp</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Nhà xuất bản Hội Nhà văn</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Nhà xuất bản lao động</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="font">
+         <font>
+          <family>Bahnschrift</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Giá bán lẻ:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txtGiaBanLe">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>35</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>401</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_8">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <family>Bahnschrift</family>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Thêm sách mới</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="btnThemSach">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>380</y>
+     <width>111</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>35</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>35</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Bahnschrift</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #00FF66;
+border: 1px solid #00FF66;</string>
+   </property>
+   <property name="text">
+    <string>Thêm sách</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../new_resource.qrc">
+     <normaloff>:/newPrefix/icons/addBook.png</normaloff>:/newPrefix/icons/addBook.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnThoat">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>380</y>
+     <width>111</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>35</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>35</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Bahnschrift</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #FF6666;
+border: 1px solid #FF6666;</string>
+   </property>
+   <property name="text">
+    <string>Hủy</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../new_resource.qrc">
+     <normaloff>:/newPrefix/icons/exitLS.png</normaloff>:/newPrefix/icons/exitLS.png</iconset>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../new_resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
