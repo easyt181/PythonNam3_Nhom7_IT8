@@ -9,7 +9,7 @@ from baocaothongke.QLHDB_ui import Ui_Quanlyhodon
 
 
 class HoaDonBan(QMainWindow, Ui_Quanlyhodon):
-    def __init__(self):
+    def __init__(self, nv_id=None):
         super().__init__()
         self.setupUi(self)
         self.setWindowTitle("Quản lý cửa hàng truyện")
@@ -18,6 +18,7 @@ class HoaDonBan(QMainWindow, Ui_Quanlyhodon):
         self.setupSearchFilters()
         self.customizeTableHeader()
         self.selected_employee = None
+        self.nv_id = nv_id  
 
         self.lineSearch.returnPressed.connect(self.searchInLineEdit)
         self.dateTimeEdit.dateTimeChanged.connect(self.searchByDate)
@@ -313,7 +314,6 @@ class HoaDonBan(QMainWindow, Ui_Quanlyhodon):
 
         self.db_cursor.execute(query_invoice)
         invoice_data = self.db_cursor.fetchone()
-
-        self.return_window = ChucNangTraHang(invoice_data)
+        self.return_window = ChucNangTraHang(invoice_data, self.nv_id)
         self.return_window.show()
 

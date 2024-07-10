@@ -22,12 +22,12 @@ class MySidebar(QMainWindow, Ui_MainWindow):
         self.frame.setHidden(True)
         self.user_info = user_info
         self.lbNametk.setText(user_info[1])
-        self.phanquyen = user_info[3]
-        self.showQLSach()    
-
-
+        self.phanquyen = user_info[3] 
+        self.setupDatabaseConnection()  
+        self.btnLogOut.clicked.connect(self.logout)
         # Các nút sidebar
         if self.phanquyen == "admin":
+            self.showThongke()
             self.btnQLNhapSach.clicked.connect(self.showQLNhapSach)
             self.btnQLSach.clicked.connect(self.showQLSach)
             self.btnHoaDonBanHang.clicked.connect(self.showHoaDonBan)
@@ -41,6 +41,7 @@ class MySidebar(QMainWindow, Ui_MainWindow):
             self.btnKhachHang.clicked.connect(self.showKhachHang)
 
         else:
+            self.showBanHang()
             self.btnQLNhapSach.clicked.connect(self.showQLNhapSach)
             self.btnQLSach.clicked.connect(self.showQLSach)
             self.btnHoaDonBanHang.clicked.connect(self.showHoaDonBan)
@@ -54,16 +55,37 @@ class MySidebar(QMainWindow, Ui_MainWindow):
             self.btnKhachHang.clicked.connect(self.showKhachHang)
 
     def showKhachHang(self):   
-        pass
+        from qlkhachhang.qlkhmain import KhachHangMain
+        self.deleteDataold()
+        self.QLKhachHang = KhachHangMain()
+        self.verticalLayout_11.addWidget(self.QLKhachHang)
 
     def showQuanLyThueTruyen(self):
-        pass
+        from qlhoadonthue.qlthuesach import MainWindow 
+        self.deleteDataold()
+        nv_id = self.getNhanVien() 
+        self.QLThueTruyen = MainWindow(nv_id)
+        self.verticalLayout_11.addWidget(self.QLThueTruyen) 
 
     def showBanHang(self):  
-        pass
+        from qlbansach.qlbanhang import MainWindow
+        self.deleteDataold()
+        nv_id = self.getNhanVien()
+        self.QLBanSach = MainWindow(nv_id)
+        self.verticalLayout_11.addWidget(self.QLBanSach)
 
     def showNhanVien(self):
-        pass
+        from qlnhanvien.qlnvmain import QLNV
+        self.deleteDataold()
+        self.QLNhanVien = QLNV()
+        self.verticalLayout_11.addWidget(self.QLNhanVien)   
+    
+    def getNhanVien(self):
+        query = "SELECT nv_id FROM nhanvien INNER JOIN taikhoan ON nhanvien.nv_tk_id = taikhoan.tk_id WHERE taikhoan.tk_id = %s"
+        self.db_cursor.execute(query, (self.user_info[0],))
+        nv_id = self.db_cursor.fetchone()
+        return nv_id[0]
+
 
     def setupDatabaseConnection(self):
         try:
@@ -95,7 +117,8 @@ class MySidebar(QMainWindow, Ui_MainWindow):
 
     def showHoaDonBan(self):
         self.deleteDataold()
-        self.hoaDonBanWidget = HoaDonBan()
+        nv_id = self.getNhanVien()
+        self.hoaDonBanWidget = HoaDonBan(nv_id)
         self.verticalLayout_11.addWidget(self.hoaDonBanWidget)
 
     def showThongke(self):
@@ -114,6 +137,12 @@ class MySidebar(QMainWindow, Ui_MainWindow):
         self.verticalLayout_11.addWidget(self.hoadonchothueWidget)
 
     def showhodontrahang(self):
-        self.deleteDataold()
+        self.deleteDataold()  
         self.hoadontrahangWidget = HoaDonTraHang()
         self.verticalLayout_11.addWidget(self.hoadontrahangWidget)
+    
+    def logout(self):
+        self.close()
+        from dangnhap.dangnhap import Login
+        self.login = Login()
+        self.login.show()

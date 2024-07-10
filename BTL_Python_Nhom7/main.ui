@@ -1018,7 +1018,7 @@ border-radius:8px;
           </font>
          </property>
          <property name="text">
-          <string>  Bán hàng</string>
+          <string>  Bán và cho thuê sách</string>
          </property>
          <property name="icon">
           <iconset resource="new_resource.qrc">
@@ -1050,7 +1050,7 @@ border-radius:8px;
           </font>
          </property>
          <property name="text">
-          <string>  Quản lý thuê truyện</string>
+          <string>Thu hồi sách cho thuê</string>
          </property>
          <property name="icon">
           <iconset resource="new_resource.qrc">

@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1131</width>
+    <width>1212</width>
     <height>789</height>
    </rect>
   </property>
@@ -126,7 +126,7 @@ QTableWidget::item:selected {
      <rect>
       <x>10</x>
       <y>130</y>
-      <width>1071</width>
+      <width>1191</width>
       <height>53</height>
      </rect>
     </property>
@@ -343,7 +343,7 @@ QTableWidget::item:selected {
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1131</width>
+      <width>1201</width>
       <height>49</height>
      </rect>
     </property>
@@ -412,7 +412,7 @@ QTableWidget::item:selected {
      <rect>
       <x>10</x>
       <y>200</y>
-      <width>1111</width>
+      <width>1191</width>
       <height>531</height>
      </rect>
     </property>
@@ -423,7 +423,7 @@ QTableWidget::item:selected {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1131</width>
+     <width>1212</width>
      <height>21</height>
     </rect>
    </property>

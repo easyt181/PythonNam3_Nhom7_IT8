@@ -7,7 +7,7 @@ from baocaothongke.chucnangtrahang_ui import Ui_chucnangtrahang
 import mysql.connector
 
 class ChucNangTraHang(QDialog, Ui_chucnangtrahang):
-    def __init__(self, invoice_data):
+    def __init__(self, invoice_data, nv_id):
         super().__init__()
         self.setupUi(self)
         self.db_connection = None
@@ -20,6 +20,7 @@ class ChucNangTraHang(QDialog, Ui_chucnangtrahang):
         self.setupCbbNhanVien(self.cbbNhanVien)
         self.setupCbbSach(self.cbbSanPham, invoice_data)
         self.so_lan_doi_tra = {}
+        self.nv_id = nv_id
 
         self.hdb_id = f"{invoice_data[0]}"
         print(f"{invoice_data[0]}")
@@ -186,7 +187,6 @@ class ChucNangTraHang(QDialog, Ui_chucnangtrahang):
             for row in range(self.model.rowCount()):
                 hdth_id = str(self.model.item(row, 0).text())
                 ngay_trahang_str = self.model.item(row, 1).text()
-                nv_id = self.model.item(row, 2).text()
                 sp_id = self.model.item(row, 3).text()
                 so_luong = int(self.model.item(row, 4).text())
                 tong_tien_str = self.model.item(row, 5).text()
@@ -197,7 +197,7 @@ class ChucNangTraHang(QDialog, Ui_chucnangtrahang):
 
                 insert_query = "INSERT INTO hoadontrahang (hdth_id, hdth_hdb_id, hdth_nv_id, hdth_ngaytrahang, hdth_tongtienhoantra) " \
                                "VALUES (%s, %s, %s, %s, %s)"
-                self.db_cursor.execute(insert_query, (hdth_id, hdb_id, nv_id, ngay_trahang, tong_tien))
+                self.db_cursor.execute(insert_query, (hdth_id, hdb_id, self.nv_id, ngay_trahang, tong_tien))
             self.updateSachSoLuong()
             self.db_connection.commit()
             self.closeDatabaseConnection()

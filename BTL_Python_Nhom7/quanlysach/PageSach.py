@@ -60,12 +60,12 @@ class QLSach(QMainWindow, Ui_qlsach):
         self.tableSach.verticalHeader().setVisible(False)
         self.tableSach.setColumnWidth(0, 100)
         self.tableSach.setColumnWidth(1, 200)
-        self.tableSach.setColumnWidth(2, 180)
-        self.tableSach.setColumnWidth(3, 182)
-        self.tableSach.setColumnWidth(4, 107)
+        self.tableSach.setColumnWidth(2, 200)
+        self.tableSach.setColumnWidth(3, 200)
+        self.tableSach.setColumnWidth(4, 120)
         self.tableSach.setColumnWidth(5, 110)
-        self.tableSach.setColumnWidth(6, 100)
-        self.tableSach.setColumnWidth(7, 115)
+        self.tableSach.setColumnWidth(6, 120)
+        self.tableSach.setColumnWidth(7, 120)
     
     def tim_kiem(self):
         text = self.txtTimKiemSach.text().strip()
@@ -137,7 +137,7 @@ class QLSach(QMainWindow, Ui_qlsach):
             action_widget.setLayout(action_layout)
             self.tableSach.setCellWidget(row, 7, action_widget)
 
-            action_widget.setFixedWidth(115)
+            action_widget.setFixedWidth(120)
             action_widget.setFixedHeight(40)
 
     def them_du_lieu_vao_table(self):
@@ -179,7 +179,7 @@ class QLSach(QMainWindow, Ui_qlsach):
                 action_widget.setLayout(action_layout)
                 self.tableSach.setCellWidget(row, 7, action_widget)
                 self.tableSach.setRowHeight(row, 40)
-                action_widget.setFixedWidth(115)
+                action_widget.setFixedWidth(120)
                 action_widget.setFixedHeight(40)
 
         except mysql.connector.Error as err:

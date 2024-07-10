@@ -34,12 +34,12 @@ class QLNhapSach(QMainWindow, Ui_qlnhapsach):
         self.tableLoSach.setColumnWidth(1, 60)
         self.tableLoSach.setColumnWidth(2, 60)
         self.tableLoSach.setColumnWidth(3, 150)
-        self.tableLoSach.setColumnWidth(4, 112)
-        self.tableLoSach.setColumnWidth(5, 120)
+        self.tableLoSach.setColumnWidth(4, 140)
+        self.tableLoSach.setColumnWidth(5, 140)
         self.tableLoSach.setColumnWidth(6, 90)
-        self.tableLoSach.setColumnWidth(7, 90)
+        self.tableLoSach.setColumnWidth(7, 95)
         self.tableLoSach.setColumnWidth(8, 60)
-        self.tableLoSach.setColumnWidth(9, 90)
+        self.tableLoSach.setColumnWidth(9, 95)
         self.tableLoSach.setColumnWidth(10, 90)
         self.tableLoSach.setColumnWidth(11, 115)
         
@@ -475,9 +475,3 @@ class QLNhapSach_SuaLoSach(QDialog, Ui_qlnhapsach_SuaLoSach):
             except mysql.connector.Error as err:
                 QMessageBox.warning(self, "Lỗi", f"Lỗi khi sửa lô sách: {err}")
 
-if __name__ == "__main__":
-    import sys
-    app = QApplication(sys.argv)
-    window = QLNhapSach()
-    window.show()
-    sys.exit(app.exec())
